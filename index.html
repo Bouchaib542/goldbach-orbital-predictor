@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Goldbach Orbital Predictor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Goldbach Orbital Predictor</h1>
+    <p>Estimate the prime gap δ(E) using:<br>
+    <code>δ(E) = √E · loglog(E) / log(E)</code><br>
+    with optional correction by local prime density.<br><br>
+    The simulator also searches for real Goldbach pairs (p, q) near the predicted value.</p>
+
+    <label for="inputE">Enter an even number E:</label>
+    <input type="text" id="inputE" placeholder="e.g., 744 or 1e25" />
+
+    <button onclick="predictGap()">Predict δ(E) and Find (p, q)</button>
+
+    <div id="results" class="output">
+      <p><strong>Predicted δ(E):</strong> <span id="predicted"></span></p>
+      <p><strong>Corrected δ(E):</strong> <span id="corrected"></span></p>
+    </div>
+
+    <div id="pairs" class="output">
+      <p><strong>Closest Goldbach pairs (p, q):</strong></p>
+      <ul id="pairList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
